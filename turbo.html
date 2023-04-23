@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turbo Engines</title>
+	<link rel="stylesheet" type="text/css" href="turbo.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-JlDifdU6h8yHTkJ2Q6l19keEU1hU6Ik29oixPqU6q41+p7YcE6am4xnwV4Gv4MYlj7dul5M5ZSwoaX9vIM93ng==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+	<header class="bg-gray-200">
+		<h1 class="text-4xl font-bold">Turbo Engines</h1>
+	  </header>
+	  
+
+	<main>
+		<section>
+			<h2>Types of Turbo Engines</h2>
+			<p>Here are some of the most common types of turbo engines:</p>
+			<ul id="turbo-types">
+				<li>Single Turbo</li>
+				<li>Twin Turbo</li>
+				<li>Sequential Turbo</li>
+				<li>VGT Turbo (Variable Geometry Turbo)</li>
+				<li>Electric Turbocharger</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2 id="turbo-type-title">Single Turbo</h2>
+			<p id="turbo-type-description">The single turbocharger is the most basic type of turbocharger. It has one turbine and one compressor and is often used in smaller engines.</p>
+			<img id="turbo-type-image" src="single-turbo.jpg" alt="Single Turbo">
+		</section>
+	</main>
+	
+	<footer>
+		<p>&copy; 2023 Turbo Engines. All rights reserved.</p>
+	</footer>
+
+	<script>
+		// Define the turbo types and their descriptions and images
+		const turboTypes = [
+			{
+				name: "Single Turbo",
+				description: "The single turbocharger is the most basic type of turbocharger. It has one turbine and one compressor and is often used in smaller engines.",
+				image: "single-turbo.jpg"
+			},
+			{
+				name: "Twin Turbo",
+				description: "The twin turbocharger has two turbines and two compressors. It provides more power and is often used in high-performance engines.",
+				image: "twin-turbo.jpg"
+			},
+			{
+				name: "Sequential Turbo",
+				description: "The sequential turbocharger has two or more turbos that work in sequence. It provides quick response at low speeds and high power at high speeds.",
+				image: "sequential-turbo.jpg"
+			},
+			{
+				name: "VGT Turbo (Variable Geometry Turbo)",
+				description: "The VGT turbocharger has variable vanes that change the flow of exhaust gas to the turbine. It provides better efficiency and response over a wider RPM range.",
+				image: "vgt-turbo.jpg"
+			},
+			{
+				name: "Electric Turbocharger",
+				description: "The electric turbocharger uses an electric motor to drive the compressor. It provides instant boost and can eliminate turbo lag.",
+				image: "electric-turbo.jpg"
+			}
+		];
+
+		// Get the list of turbo types and add a click event listener to each one
+		const turboTypeList = document.getElementById("turbo-types");
+		for (let i = 0; i < turboTypeList.children.length; i++) {
+			const turboType = turboTypes[i];
+			const listItem = turboTypeList.children[i];
+			listItem.addEventListener("click", function() {
+				updateTurboType(turboType);
+			});
+		}
+
+		// Update the turbo type information when a list item is clicked
+		function updateTurboType(turboType) {
+			document.getElementById("turbo-type-title").textContent = turboType.name;
+			document.getElementById("turbo-type-description").textContent = turboType.description
+            document.getElementById("turbo-type-image").src = turboType.image;
+	}
+</script>
+</body>
+</html>
+

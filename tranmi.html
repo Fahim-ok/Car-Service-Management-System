@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Service Management System</title>
+    <link rel="stylesheet" href="transmi.css">
+  </head>
+  <body>
+    <header>
+      <h1>Car Service Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Book Appointment</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Book an Appointment</h2>
+      <form>
+        <label for="service">Select Service:</label>
+        <select id="service" name="service">
+          <option value="oil-change">Oil Change</option>
+          <option value="tire-rotation">Tire Rotation</option>
+          <option value="brake-replacement">Brake Replacement</option>
+        </select>
+        <br>
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" name="time">
+        <br>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <input type="submit" value="Book Appointment">
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Car Service Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

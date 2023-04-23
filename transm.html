@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transmission Types</title>
+  <link rel="stylesheet" href="transm.css">
+</head>
+<body>
+  <header>
+    <h1>Transmission Types</h1>
+  </header>
+
+  <div class="container">
+    <div class="type-selector">
+      <ul>
+        <li class="active" data-type="manual">Manual</li>
+        <li data-type="automatic">Automatic</li>
+        <li data-type="continuous">Continuously Variable</li>
+        <li data-type="semi-automatic">Semi-Automatic</li>
+      </ul>
+    </div>
+    <div class="type-details">
+      <h2>Manual Transmission</h2>
+      <p>A manual transmission, also known as a stick-shift, requires the driver to manually shift gears using a clutch pedal and gear stick.</p>
+      <ul>
+        <li>Provides greater control over the car's acceleration and deceleration</li>
+        <li>Typically more fuel efficient than automatic transmissions</li>
+        <li>Often preferred by driving enthusiasts</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const typeSelector = document.querySelector('.type-selector');
+    const typeSelectorItems = typeSelector.querySelectorAll('li');
+    const typeDetails = document.querySelector('.type-details');
+    const typeDetailsHeading = typeDetails.querySelector('h2');
+    const typeDetailsDescription = typeDetails.querySelector('p');
+    const typeDetailsList = typeDetails.querySelector('ul');
+
+    typeSelectorItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all items
+        typeSelectorItems.forEach(item => item.classList.remove('active'));
+
+        // Set active class on clicked item
+        item.classList.add('active');
+
+        // Update type details based on clicked item
+        const type = item.dataset.type;
+        switch (type) {
+          case 'manual':
+            typeDetailsHeading.textContent = 'Manual Transmission';
+            typeDetailsDescription.textContent = 'A manual transmission, also known as a stick-shift, requires the driver to manually shift gears using a clutch pedal and gear stick.';
+            typeDetailsList.innerHTML = '<li>Provides greater control over the car\'s acceleration and deceleration</li><li>Typically more fuel efficient than automatic transmissions</li><li>Often preferred by driving enthusiasts</li>';
+            break;
+          case 'automatic':
+            typeDetailsHeading.textContent = 'Automatic Transmission';
+            typeDetailsDescription.textContent = 'An automatic transmission shifts gears automatically based on the car\'s speed and engine RPMs, requiring no action from the driver.';
+            typeDetailsList.innerHTML = '<li>Easier to operate than manual transmissions</li><li>Often found in luxury and high-performance cars</li><li>Generally less fuel efficient than manual transmissions</li>';
+            break;
+          case 'continuous':
+            typeDetailsHeading.textContent = 'Continuously Variable Transmission';
+            typeDetailsDescription.textContent = 'A continuously variable transmission (CVT) uses a system of belts and pulleys to provide an infinite number of gear ratios.';
+            typeDetailsList.innerHTML = '<li>Provides smooth and seamless acceleration</li><li>Typically more fuel efficient than automatic or manual transmissions</li><li>Often found in hybrid and electric cars</li>';
+            break;
+          case 'semi-automatic':
+            typeDetailsHeading.textContent = 'Semi-Automatic Transmission';
+            typeDetailsDescription.textContent = 'A semi-automatic transmission combines aspects of both manual and automatic transmissions, allowing the driver to manually shift gears without using a clutch pedal.';
+typeDetailsList.innerHTML = '<li>Provides the convenience of an automatic transmission with the control of a manual transmission</li><li>Found in some high-performance cars and race cars</li><li>Not as fuel efficient as fully manual transmissions</li>';
+break;
+default:
+console.error('Invalid transmission type:', type);
+break;
+}
+});
+});
+</script>
+</body>
+</html>
